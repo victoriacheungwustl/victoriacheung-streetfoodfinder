@@ -147,7 +147,7 @@ input[type=text] {
   position: absolute; 
   width: 50%; 
   left: 25%;
-  top: 700px;
+  top: 750px;
   display:none;
   /* transform: translate(-50%, -50%); */
 
@@ -184,7 +184,3 @@ tr, td{
 }
  */
 
- footer {
-  position: absolute;
-  bottom: 0px;
-}
