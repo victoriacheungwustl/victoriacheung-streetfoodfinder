@@ -1,13 +1,92 @@
-<head> </head>
-<body> 
-    <input type="text" id="search" placeholder="Search for your city here">
-    <button id="searchbtn" type="button">Search</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Link to Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--LINK TO CSS FILE-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>CSE204 Victoria Cheung Final Project</title>
+    <!--LINK TO GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inter:wght@200;400&family=Karla:wght@500&family=Poppins:wght@300;600&family=Readex+Pro:wght@700&display=swap" rel="stylesheet">
+</head>
 
-    <button>Click here for a list of cities supported </button>
+<body>
+    <!--HEADER, inspired by W3schools-->
+    <div id="home" class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#home">News</a>
+        <a href="#home">Contact</a>
+        <a href="#home">About</a>
+      </div>
 
-    <p>List of Vendors</p>
-    <ul id="list"> </ul>
+    <!--MAIN DIV INSIDE BACKGROUND IMAGE-->
+    <div class="main">
+        <h1>Street Food Finder</h1>
 
-    <script src="script.js"></script> 
-    
+        <!--SEARCH BUTTON-->
+        <div id="searchdiv">
+            <input type="text" id="search" placeholder="Search for your city here..." type="text">
+            <button id="searchbtn" type="button" class="btn btn-dark">Search
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+       
+        <!--LIST OF CITIES SUPPORTED-->
+        <div>
+            <button id="cities" onclick="displayCities()" class="btn btn-dark">List of cities supported </button>
+        </div>
+
+        <div id="result" style="display:none">
+            <table>
+                <tr>
+                  <td>ottawa</td>
+                  <td>boston</td>
+                  <td>vancouver</td>
+                </tr>
+                <tr>
+                  <td>victoria</td>
+                  <td>toronto</td>
+                  <td>burnaby</td>
+                </tr>
+                <tr>
+                  <td>calgary</td>
+                  <td>denver</td>
+                  <td>jacksonville</td>
+                </tr>
+                <tr>
+                    <td>richmond</td>
+                    <td>washington</td>
+                    <td>niagara</td>
+                  </tr>
+              </table>
+        </div>
+
+    </div>
+
+    <!--DIV TO DISPLAY RESULTS OF SEARCH-->
+    <div id="maindiv">
+        <!-- <ul class="list-group list-group-flush" id="list"> </ul> -->
+        <ul id="list"> </ul>
+    </div>
+
+    <!-- <div class="companyinfo">
+        <div id="about" class="info"> 
+            <img class="homeinspopic" id="collegepic" src="college.jpeg" alt="college">
+            <p class="homeinspoheader">The College Edit</p>
+            <p class="homeinspotext"> College dorms can be given a personal touch and made to look an exhilarating place to live. Decorating your college dorm can be a tedious job. Getting your dorm friends together to decorate the place sounds a fun filled activity. Find below some college furniture ideas on furnishing your kids dorm. </p>
+        </div>
+        <div class="info" id="contact">
+            <img class="homeinspopic" id="seasonpic" src="halloween.jpg" alt="seasonal">
+            <p class="homeinspoheader">Seasonal Favorites</p>
+            <p class="homeinspotext"> Because this time of year is all about making your home look and feel as cozy and homey as possible, we've gathered up the prettiest rustic fall decorating ideas that are easy to pull off but oh-so-impressive at the same time. </p>
+        </div>
+    </div> -->
+
+
+    <script src="script.js"></script>
+
 </body>

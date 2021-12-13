@@ -23,7 +23,7 @@ function getData(){
     //CORS ERROR: how to fix cors error - have to request temporary access 
     //https://cors-anywhere.herokuapp.com/corsdemo 
     //ask clapp if final project is too simple
-    xhttp.open("GET", "http://data.streetfoodapp.com/1.1/schedule/" + data, true); //AJAX call GET request to cse 204 API 
+    xhttp.open("GET", "https://cors-anywhere.herokuapp.com/http://data.streetfoodapp.com/1.1/schedule/" + data, true); //AJAX call GET request to cse 204 API 
     //xhttp.setRequestHeader("x-api-key","cfa315-c56177-5dd181-f969db-726b0f"); //only required for bars api 
     xhttp.send(); 
 
@@ -58,6 +58,8 @@ function displayData(vendors){
        // var sublist = initialToDo.appendChild("ul");
        //console.log(key); 
       initialToDo.addEventListener('click',showVendorData.bind(event, vendor, value), false);
+      initialToDo.classList.add("vendorname");
+      document.getElementById("maindiv").style.display = "block";
     //initialToDo.addEventListener("click", (event, key, value) => showVendorData(event, key, value));
     }
 
@@ -65,7 +67,7 @@ function displayData(vendors){
 
 var showVendorData = function(event, name, data){
     console.log(name.identifier);
-    console.log(data);
+    //console.log(data);
     var vendor = document.getElementById(name.identifier);
     console.log(vendor);
     var ul = document.createElement("ul"); 
@@ -76,38 +78,59 @@ var showVendorData = function(event, name, data){
     //     sublist.appendChild(initialToDo);
     // }
     var description = document.createElement("li");
-    description.appendChild(document.createTextNode("description: " + name.description));
-    description.id = "description"; 
+    description.appendChild(document.createTextNode(name.description));
+    description.id = "description-" + name.identifier; 
     //check if we have added description--> ERROR !!!! this only works for the first list element 
-    if (!vendor.contains(document.getElementById("description"))){
+    if (!vendor.contains(document.getElementById("description-" + name.identifier))){
         var sublist = vendor.appendChild(ul); 
         sublist.appendChild(description);
     }
+    description.classList.add("vendorinfo");
+
+
+    var url = document.createElement("li");
+    url.appendChild(document.createTextNode("Website: " + name.url));
+    url.id = "url-" + name.identifier; 
+    //check if we have added description--> ERROR !!!! this only works for the first list element 
+    if (!vendor.contains(document.getElementById("url-" + name.identifier))){
+        var sublist = vendor.appendChild(ul); 
+        sublist.appendChild(url);
+    }
+    url.classList.add("vendorinfo");
+
+    var email = document.createElement("li");
+    email.appendChild(document.createTextNode("Email: " + name.email));
+    email.id = "email-" + name.identifier; 
+    //check if we have added description--> ERROR !!!! this only works for the first list element 
+    if (!vendor.contains(document.getElementById("email-" + name.identifier))){
+        var sublist = vendor.appendChild(ul); 
+        sublist.appendChild(email);
+    }
+    //email.classList.add("subliststyle") //can replace sublist style with bootstrap class 
+    email.classList.add("vendorinfo");
+
+    var phone = document.createElement("li");
+    phone.appendChild(document.createTextNode("Phone Number: " + name.phone));
+    phone.id = "Phone Number-" + name.phone; 
+    //check if we have added description--> ERROR !!!! this only works for the first list element 
+    if (!vendor.contains(document.getElementById("Phone Number-" + name.phone))){
+        var sublist = vendor.appendChild(ul); 
+        sublist.appendChild(phone);
+    }
+
+
 }
 
-//display cities button
-document.getElementById("displayCitiesBtn").addEventListener('click', displayCities);
+
+//STUFF I NEED TO DO: 
+//make a comment on the submission about CORS temporary access request error 
+//code a footer 
+//make sure links work 
+
+
 function displayCities(){
-    //make cities array and display it 
+    var T = document.getElementById("result"); 
+    T.style.display = "block"; 
+
 }
 
-
-//cities that work 
-//ottawa 
-//vancouver
-//london
-//richmond
-
-// function showVendorData(event, name, data){
-
-//     console.log(data);
-//     var vendor = document.getElementById(name);
-//     var ul = document.createElement("ul"); 
-//     var sublist = vendor.appendChild(ul); //error
-//     console.log(name); 
-//     for (const [key, value] of Object.entries(data)){
-//         var initialToDo = document.createElement("li");
-//         initialToDo.appendChild(document.createTextNode(key + ": " + value));
-//         sublist.appendChild(initialToDo);
-//     }
-// }
