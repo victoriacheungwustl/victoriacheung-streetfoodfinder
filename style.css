@@ -15,8 +15,6 @@ body {
     background-position: center;
     z-index:1; 
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 
 p{
@@ -36,21 +34,11 @@ ul {
   
   ul li {
     position: relative;
-    font-size: 15px;
+    font-size: 17px;
     padding: 15px 10px 15px 35px;
     text-align: center;
     margin-bottom: 8px;
   }
-
-  /** how to target elements created by JS**/ 
-.subliststyle{
-      color: red;
-  }
-
-/* #cities{
-    position: relative; 
-    top: 50px; 
-} */
 
 div{
     text-align: center;
@@ -137,7 +125,6 @@ input[type=text] {
   padding: 50px;
 } 
 
-/*HOW TO GET IT TO DISPLAY BELOW SEARCH BAR*/
 
 #maindiv{ 
   background-color:#faf9f9;
@@ -154,8 +141,8 @@ input[type=text] {
 }
 
 .vendorname{
-  font-family: 'Inter', sans-serif; 
-  font-size: 17px;
+  font-family: 'Readex Pro', sans-serif; 
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -165,6 +152,12 @@ input[type=text] {
   border-radius: 10px;
   transform: scale(1.1);
   border: 2px solid #333; 
+}
+
+.vendorinfo{
+  font-weight:500; 
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
 }
 
 table {
@@ -184,3 +177,23 @@ tr, td{
 }
  */
 
+
+ .hide {
+  display: none;
+}
+
+.container:hover + .hide {
+  display: block;
+}
+
+#whoweare, #jobs, #contact, #about{
+  background-color: #333;
+  color:white;
+  text-align:left;
+  padding: 20px 10px;
+  width:100%;
+}
+
+.container{
+  background-color:#333;
+}

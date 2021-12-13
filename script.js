@@ -117,7 +117,7 @@ var showVendorData = function(event, name, data){
         var sublist = vendor.appendChild(ul); 
         sublist.appendChild(phone);
     }
-
+    phone.classList.add("vendorinfo");
 
 }
 
@@ -131,6 +131,10 @@ var showVendorData = function(event, name, data){
 function displayCities(){
     var T = document.getElementById("result"); 
     T.style.display = "block"; 
+}
 
+function displayWhoWeAre(){
+    var T = document.getElementById("whoweare"); 
+    T.style.display = "block"; 
 }
 
